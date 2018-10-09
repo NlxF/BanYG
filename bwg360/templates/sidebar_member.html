@@ -1,0 +1,78 @@
+{% block body_sidebar %}
+<nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+    <ul class="nav sidebar-nav">
+        <li class="sidebar-brand">
+            <a href="{{ url_for('bwg360.home_page') }}">
+               <p style="text-align:center">{{ user_manager.USER_APP_NAME }}</p>
+            </a>
+        </li>
+        <hr class="no-margins"/>
+        <div class="sidebar-container">
+            <p class="sidebar-hello">Hello: {{current_user.username}}</p>
+            {% if current_user.brick < 300 %}
+            <p class="sidebar-remain-r">({%trans%}剩余流量:{%endtrans%}{{current_user.brick}}MB)</p>
+            {% else %}
+            <p class="sidebar-remain-g">({%trans%}剩余流量:{%endtrans%}{{current_user.brick}}MB)</p>
+            {% endif %}
+            <div >
+                <p class="sidebar-time2">{%trans%}上次登录时间:{%endtrans%}</p>
+                {% set value=current_user.username %}
+                {% cache 600, value %}
+                <span class="sidebar-time">{{current_user.last_login}}</span>
+                {% endcache %}
+                <br/>
+                <a href="{{url_for('user.change_password')}}">{%trans%}有疑问?立即修改密码{%endtrans%}</a>
+            </div>
+        </div>
+        <hr class="no-margins"/>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-fw fa-plus"></i>{%trans%}账号修改{%endtrans%}<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                {# 常见问题 #}
+                <li class="dropdown-header">{%trans%}账号问题{%endtrans%}</li>
+                <li><a href="{{url_for('user.change_username')}}">{%trans%}用户名修改{%endtrans%}</a></li>
+                <li><a href="{{url_for('user.change_password')}}">{%trans%}密码修改{%endtrans%}</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="{{url_for('bwg360.recharge_record')}}"><i class="fa fa-fw fa-file-o"></i>{%trans%}充值记录{%endtrans%}</a>
+        </li>
+        <li>
+            <a href="{{url_for('bwg360.download_record')}}"><i class="fa fa-fw fa-bars"></i>{%trans%}下载记录{%endtrans%}</a>
+        </li>
+        <li>
+            <a href="{{url_for('bwg360.support_list')}}"><i class="fa fa-fw fa-list"></i>{%trans%}支持列表{%endtrans%}</a>
+        </li>
+        <li>
+            <a href="{{url_for('bwg360.disclaimer')}}"><i class="fa fa-fw fa-dropbox"></i>{%trans%}免责声明{%endtrans%}</a>
+        </li>
+        <li>
+            <a href="{{url_for('bwg360.do_recharge')}}"><i class="fa fa-fw fa-money"></i>&nbsp;&nbsp;{%trans%}充值{%endtrans%}</a>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-fw fa-plus"></i>&nbsp;&nbsp;{%trans%}帮助{%endtrans%}<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                {# 常见问题 #}
+                <li class="dropdown-header">{%trans%}常见问题{%endtrans%}</li>
+                <li><a href="{{url_for('bwg360.tutorial')}}">{%trans%}使用教程{%endtrans%}</a></li>
+                <li><a href="{{url_for('bwg360.traffic')}}">{%trans%}流量问题{%endtrans%}</a></li>
+                <li><a href="{{url_for('bwg360.download')}}">{%trans%}下载问题{%endtrans%}</a></li>
+                <li><a href="{{url_for('bwg360.file_cache')}}">{%trans%}缓存问题{%endtrans%}</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="{{ url_for('user.logout') }}"><i class="fa fa-fw fa-bank"></i>{%trans%}安全退出{%endtrans%}</a>
+        </li>
+        <hr class="no-margins"/>
+        <li>
+            <p class="free-traffic">
+                {{g.amount|human_readable}}{%trans%} free traffic is currently left{%endtrans%}
+            </p>
+        </li>
+    </ul>
+</nav>
+{% endblock %}

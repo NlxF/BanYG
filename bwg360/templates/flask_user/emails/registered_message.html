@@ -1,0 +1,17 @@
+{% extends 'flask_user/emails/base_message.html' %}
+
+{% block message %}
+
+<p>{%trans%}Thank you for registering with {{ app_name }}.{%endtrans%}</p>
+
+{% if confirm_email_link -%}
+<p>{%trans%}You will need to confirm your email next.{%endtrans%}</p>
+
+<p>{%trans%}If you initiated this registration, please click on the link below:{%endtrans%}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ confirm_email_link }}">{%trans%}Confirm your email{%endtrans%}</a></p>
+
+
+<p>{%trans%}If you did not initiate this registration, you may safely ignore this email.{%endtrans%}</p>
+{%- endif %}
+
+{% endblock %}

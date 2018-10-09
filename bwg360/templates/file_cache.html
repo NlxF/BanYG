@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block title %}
+<title>{%trans%}BanYG360{%endtrans%}|{%trans%}缓存问题{%endtrans%}</title>
+{% endblock %}
+{% block body_sidebar%}
+{% include 'sidebar_member.html' %}
+{% endblock %}
+
+{% block body_content %}
+<div class="container">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="row">
+            <h2 align="center">{%trans%}缓存问题{%endtrans%}</h2>
+            <br/>
+            <br/>
+            <p>{%trans%}全站不设文件缓存，所有的下载请求都是从目标站点实时下载再转发到用户，所以我们只是搬运工，我们不生产内容。{%endtrans%}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "footer.html" %}
+{% endblock %}
+
+{% block sidebar_js %}
+{% include "sidebar_js.html"%}
+{% endblock %}

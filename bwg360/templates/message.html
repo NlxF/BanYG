@@ -1,0 +1,39 @@
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            {% if category=='error' %}
+                <script>$.toast({heading: '',
+                                    text: '{{ message|safe }}',
+                                bgColor : '#a94442',
+                      showHideTransition: 'slide',
+                                position: 'top-center',
+                                    icon: 'Error',
+                                   stack: 5,
+                         extendedTimeout: 0,
+                         allowToastClose: false,
+                               hideAfter: 5000});
+                </script>
+            {% else %}
+                <script>$.toast({heading: '',
+                                    text: '{{ message|safe }}',
+                                bgColor : '#3c763d',
+                      showHideTransition: 'slide',
+                                position: 'top-center',
+                                    icon: 'success',
+                                   stack: 5,
+                         extendedTimeout: 0,
+                         allowToastClose: false,
+                               hideAfter: 3000});
+                </script>
+            {% endif %}
+
+            {#<div class="alert alert-{{ category|transform }} alert-dismissible fade in" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+                  <!--<strong>{{ category }}!</strong> -->
+                  {{ message|safe }}
+            </div>#}
+        {% endfor %}
+    {% endif %}
+{% endwith %}

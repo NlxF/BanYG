@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="csrf-token" content="{{ csrf_token() }}">
+      {#<title>{{ user_manager.USER_APP_NAME }}</title>#}
+      <title>{%trans%}BanYG360{%endtrans%}</title>
+      <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.jpg') }}">
+
+      <!-- Bootstrap -->
+      <!--<link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
+      <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.css')}}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/structure.css')}}?q=128054999">
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/jquery.toast.min.css') }}">
+      {#<link href="https://cdn.bootcss.com/jquery-toast-plugin/1.3.2/jquery.toast.min.css" rel="stylesheet">#}
+
+      <style>
+          hr { border-color: #cccccc; margin: 0; }
+          .no-margins { margin: 0px; }
+          .with-margins { margin: 10px; }
+          .col-centered { float: none; margin: 0 auto; }
+          .aligncenter{ text-align:center; }
+      </style>
+
+      {#<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>#}
+      {#<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>#}
+      <script src="{{ url_for('static', filename='js/jquery-1.12.4.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/ads.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/jquery.toast.min.js') }}"></script>
+      {#<script src="https://cdn.bootcss.com/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>#}
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+          <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+          <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+      <![endif]-->
+      {#{{ moment.include_jquery() }}#}
+      {{ moment.include_moment() }}
+      <!--使用中文,默认是英语的-->
+      {{ moment.lang("zh-CN") }}
+
+      {# *** Allow sub-templates to insert extra html to the head section *** #}
+      {% block extra_css %}{% endblock %}
+  </head>
+
+
+<body class="flask_custom">
+    {% include "adblock.html" %}
+    {% include "message.html" %}
+    {% block body %}
+
+    <br/>
+    <br/>
+
+    {% block main %}
+        {% block content %}{% endblock %}
+    {% endblock %}
+    </div>
+
+    {% include "footer.html" %}
+    {% endblock %}
+
+
+    {# *** Allow sub-templates to insert extra html to the bottom of the body *** #}
+    {% block extra_js %}{% endblock %}
+
+  </body>
+</html>

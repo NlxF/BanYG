@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block title %}
+<title>{%trans%}BanYG360{%endtrans%}|{%trans%}使用教程{%endtrans%}</title>
+{% endblock %}
+{% block body_sidebar%}
+{% include 'sidebar_member.html' %}
+{% endblock %}
+
+{% block body_content %}
+<div class="container">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="row">
+            <h2 align="center">{%trans%}使用教程{%endtrans%}</h2>
+            <br/>
+            <br/>
+            <p>{%trans%}1：在首页输入框中输入当前需要下载的文件的链接，点击搜索。{%endtrans%}</p>
+            <p>{%trans%}2：再在搜索列表中选择合适的文件，点击右侧的下载链接，自动跳转到下载页面。{%endtrans%}</p>
+            <p>{%trans%}3：最后在浏览器路径选择对话框中选择下载存放路径。{%endtrans%}</p>
+            <p>{%trans%}注意：{%endtrans%}</p>
+            <ul>
+                <li><p>游客在点击完搜索之后会有下载超时时间，请注意尽快下载。注册用户没有此限制，点此免费<a target="_blank" href="{{url_for('user.register')}}">注册</a></p></li>
+                <li><p>上述1、2、3步骤为一次下载完整操作，如果操作过程中遇到错误提示，请从步骤1重新开始完整的操作。</p></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "footer.html" %}
+{% endblock %}
+
+{% block sidebar_js %}
+{% include "sidebar_js.html"%}
+{% endblock %}

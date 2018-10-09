@@ -1,0 +1,25 @@
+{% block body_sidebar %}
+<nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+    <ul class="nav sidebar-nav">
+        <li class="sidebar-brand">
+            <a href="{{ url_for('bwg360.home_page') }}">
+               <p style="text-align:center">{{ user_manager.USER_APP_NAME }}</p>
+            </a>
+        </li>
+        <br/>
+        <br/>
+        <br/>
+        <p style="text-align:center;margin: 0 10px 10px;">
+            <a href="{{ url_for('user.login') }}">{%trans%}Sign in now{%endtrans%}</a>{%trans%} and share 10G free download traffic daily. Not registered yet? {%endtrans%}<a href="{{ url_for('user.register') }}">{%trans%}Sign up now{%endtrans%}</a>
+        </p>
+        <br/>
+        <p style="text-align:center">
+            {%trans%}visitor can only download once a day for free{%endtrans%}
+        </p>
+        <br/>
+        <p style="text-align:center">
+            {{g.amount|human_readable}}{%trans%} free traffic is currently left{%endtrans%}
+        </p>
+    </ul>
+</nav>
+{% endblock %}

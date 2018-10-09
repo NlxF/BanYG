@@ -1,0 +1,572 @@
+# Chinese (Simplified, China) translations for PROJECT.
+# Copyright (C) 2018 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2018-09-28 00:05+0800\n"
+"PO-Revision-Date: 2018-09-28 00:06+0800\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+"Language-Team: zh_Hans_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+"X-Generator: Poedit 2.1.1\n"
+
+#: controllers/home.py:79 controllers/home.py:196
+msgid "Please enter a valid URL"
+msgstr "请输入正确的URL!"
+
+#: controllers/home.py:101
+msgid "URL is not supported now!"
+msgstr "暂不支持此URL!"
+
+#: controllers/home.py:111
+msgid "Please search by home page!"
+msgstr "请通过主页搜索!"
+
+#: controllers/home.py:134 controllers/home.py:142
+msgid "An error occurred, please try again later!"
+msgstr "发生了一个错误，请稍后再试!"
+
+#: controllers/home.py:145
+msgid "Fetch file information timeout, Please try again later!"
+msgstr "获取信息超时，请少受再试!"
+
+#: controllers/home.py:158
+msgid "URL does not exist!"
+msgstr "URL不存在!"
+
+#: controllers/home.py:169
+msgid "Waiting time is too long, timeout!"
+msgstr "等待超时!"
+
+#: controllers/home.py:176
+#, python-format
+msgid "Free download can not be greater than %dM"
+msgstr "免费下载的文件大小不能超过 %dM"
+
+#: controllers/home.py:178
+msgid "An error occur when downloading"
+msgstr "下载出错了"
+
+#: controllers/dlFiles/youtubeDL.py:212
+msgid "request occur exception"
+msgstr "请求异常"
+
+#: controllers/dlFiles/youtubeDL.py:216
+msgid "unknown error"
+msgstr "未知错误"
+
+#: controllers/dlFiles/youtubeDL.py:220
+msgid "request timeout"
+msgstr "请求超时"
+
+#: forms/searchForm.py:32
+msgid "Input video or file URL"
+msgstr "输入下载的URL"
+
+#: templates/404.html:53
+msgid "404 Not Found!"
+msgstr "404 网页不存在！"
+
+#: templates/404.html:54
+msgid " Return to "
+msgstr " 返回 "
+
+#: templates/404.html:54
+msgid "home page"
+msgstr "主页"
+
+#: templates/adblock.html:2
+msgid ""
+"Our website is made possible by displaying online advertisements to our visitors. Please consider supporting us by "
+"disabling your ad blocker."
+msgstr "本站通过向访问者显示在线广告来获取收入，收入全部用于维持网站的日常运行。请考虑通过停用广告拦截器来支持本站。"
+
+#: templates/disclaimer.html:3 templates/do_recharge.html:3 templates/download_problem.html:3
+#: templates/download_record.html:3 templates/file_cache.html:3 templates/flask_user_layout.html:10
+#: templates/recharge_record.html:3 templates/support_list.html:3 templates/title.html:3 templates/title.html:5
+#: templates/tutorial.html:3
+msgid "BanYG360"
+msgstr "BanYG360"
+
+#: templates/disclaimer.html:3 templates/disclaimer.html:13
+msgid "免责声明"
+msgstr "免责声明"
+
+#: templates/disclaimer.html:17
+msgid ""
+"本站搜索资源全部来自于互联网，通过使用本站随之而来的风险与本站无关。访问者可将本站提供的内容用于个人学习、研究或欣赏，以及"
+"其他非商业性或非盈利性用途，但同时应遵守著作权法及其他相关法律的规定，不得侵犯本网站及相关权利人的合法权利。"
+msgstr ""
+"本站搜索资源全部来自于互联网，通过使用本站随之而来的风险与本站无关。访问者可将本站提供的内容用于个人学习、研究或欣赏，以及"
+"其他非商业性或非盈利性用途，但同时应遵守著作权法及其他相关法律的规定，不得侵犯本网站及相关权利人的合法权利。"
+
+#: templates/disclaimer.html:18
+msgid ""
+"本站致力于提供合理、准确、完整的资讯信息，但不保证信息的合理性、准确性和完整性，且不对因信息的不合理、不准确或遗漏导致的任"
+"何损失或损害承担责任。"
+msgstr ""
+"本站致力于提供合理、准确、完整的资讯信息，但不保证信息的合理性、准确性和完整性，且不对因信息的不合理、不准确或遗漏导致的任"
+"何损失或损害承担责任。"
+
+#: templates/disclaimer.html:19
+msgid "使用本站需要遵守当地的放律法规，不得利用本站危害国家安全、泄露国家秘密，不得侵犯国家社会集体的和公民的合法权益。"
+msgstr "使用本站需要遵守当地的放律法规，不得利用本站危害国家安全、泄露国家秘密，不得侵犯国家社会集体的和公民的合法权益。"
+
+#: templates/do_recharge.html:3 templates/do_recharge.html:13
+msgid "充值"
+msgstr "充值"
+
+#: templates/do_recharge.html:16 templates/recharge_record.html:16
+msgid "即将到来"
+msgstr "即将来临"
+
+#: templates/download_problem.html:3 templates/download_problem.html:13
+msgid "下载问题"
+msgstr "下载问题"
+
+#: templates/download_problem.html:16
+msgid "1. 游客下载有次数限制，24h内只能下载一个文件。注册成普通用户后此限制会自动取消。"
+msgstr "1. 游客下载有次数限制，24h内只能下载一个文件。注册成普通用户后此限制会自动取消。"
+
+#: templates/download_problem.html:17
+#, python-format
+msgid "2. 游客和普通用户每次下载的文件大小不能超过%(maxfile)sMB。"
+msgstr "2. 游客和普通用户每次下载的文件大小不能超过%(maxfile)sMB。"
+
+#: templates/download_record.html:3 templates/download_record.html:13 templates/support_list.html:3
+msgid "下载记录"
+msgstr "下载记录"
+
+#: templates/download_record.html:14
+#, python-format
+msgid "仅显示最近的%(limit)s条或最近一个月的记录:"
+msgstr "仅显示最近的%(limit)s条或最近一个月的记录:"
+
+#: templates/download_record.html:18 templates/support_list.html:18
+msgid "NO."
+msgstr "NO."
+
+#: templates/download_record.html:19
+msgid "文件名"
+msgstr "文件名"
+
+#: templates/download_record.html:20
+msgid "下载IP"
+msgstr "下载IP"
+
+#: templates/download_record.html:21
+msgid "下载URL"
+msgstr "下载URL"
+
+#: templates/download_record.html:22
+msgid "下载时间"
+msgstr "下载时间"
+
+#: templates/download_record.html:23
+msgid "是否免流量"
+msgstr "是否免流量"
+
+#: templates/file_cache.html:3 templates/file_cache.html:13
+msgid "缓存问题"
+msgstr "缓存问题"
+
+#: templates/file_cache.html:16
+msgid "全站不设文件缓存，所有的下载请求都是从目标站点实时下载再转发到用户，所以我们只是搬运工，我们不生产内容。"
+msgstr "全站不设文件缓存，所有的下载请求都是从目标站点实时下载再转发到用户，所以我们只是搬运工，我们不生产内容。"
+
+#: templates/page_home.html:17
+msgid "BanYG"
+msgstr "搬运工"
+
+#: templates/page_home.html:17
+msgid "Nothing can not be shipped"
+msgstr "我们不生成内容，我们只是搬运工"
+
+#: templates/page_home.html:26
+msgid "Search"
+msgstr "查询"
+
+#: templates/recharge_record.html:3 templates/recharge_record.html:13
+msgid "充值记录"
+msgstr "充值记录"
+
+#: templates/sidebar_visitor.html:13
+msgid "Sign in now"
+msgstr "立即登录"
+
+#: templates/sidebar_visitor.html:13
+msgid " and share 10G free download traffic daily. Not registered yet? "
+msgstr " 共享每天10G免费下载流量。 还未注册？"
+
+#: templates/sidebar_visitor.html:13
+msgid "Sign up now"
+msgstr "马上注册"
+
+#: templates/sidebar_visitor.html:17 util/__init__.py:75
+msgid "visitor can only download once a day for free"
+msgstr "游客每天只能免费下载一次"
+
+#: templates/sidebar_visitor.html:21
+msgid " free traffic is currently left"
+msgstr " 免费流量剩余"
+
+#: templates/support_list.html:13
+msgid "支持列表"
+msgstr "支持列表"
+
+#: templates/support_list.html:19
+msgid "支持的URL"
+msgstr "支持的URL"
+
+#: templates/support_list.html:25
+msgid "支持的URL,参考"
+msgstr "支持的URL,参考"
+
+#: templates/support_list.html:25
+msgid "列表"
+msgstr "列表"
+
+#: templates/support_list.html:33
+msgid "持续更新中"
+msgstr "持续更新中"
+
+#: templates/traffic.html:3
+msgid "搬运工360"
+msgstr "搬运工360"
+
+#: templates/traffic.html:3 templates/traffic.html:13
+msgid "流量问题"
+msgstr "流量问题"
+
+#: templates/traffic.html:16
+#, python-format
+msgid "本站每天提供%(amount)sGB的流量供大家免费下载，此流量只针对未充值用户和游客。免费流量在下列情况下会记扣："
+msgstr "本站每天提供%(amount)sGB的流量供大家免费下载，此流量只针对未充值用户和游客。免费流量在下列情况下会记扣："
+
+#: templates/traffic.html:18
+msgid "游客下载：一旦开始下载，额度就会被占用，不管最终是否下载成功。"
+msgstr "游客下载：一旦开始下载，额度就会被占用，不管最终是否下载成功。"
+
+#: templates/traffic.html:19
+msgid "未充值用户下载：一旦开始下载，额度就会被占用，不管最终是否下载成功。"
+msgstr "未充值用户下载：一旦开始下载，额度就会被占用，不管最终是否下载成功。"
+
+#: templates/traffic.html:20
+msgid "之所以免费流量在下载刚开始后就记扣是因为若在下载结束后才记扣，就会出现超额现象，增加运营成本，请见谅。"
+msgstr "之所以免费流量在下载刚开始后就记扣是因为若在下载结束后才记扣，就会出现超额现象，增加运营成本，请见谅。"
+
+#: templates/traffic.html:22
+msgid "充值流量："
+msgstr "充值流量："
+
+#: templates/traffic.html:24
+msgid "充值用户流量只有在成功下载结束后才会记扣。"
+msgstr "充值用户流量只有在成功下载结束后才会记扣。"
+
+#: templates/traffic.html:25
+msgid ""
+"当用户下载文件时，可能会出现正在下载的链接的文件大小已经超过了账户剩余的流量额，本站出于保证用户能够在超流量情况下下载完"
+"整，允许出现负数流量，即是超支流量。超支部分流量在下次充值后会自动扣除。"
+msgstr ""
+"当用户下载文件时，可能会出现正在下载的链接的文件大小已经超过了账户剩余的流量额，本站出于保证用户能够在超流量情况下下载完"
+"整，允许出现负数流量，即是超支流量。超支部分流量在下次充值后会自动扣除。"
+
+#: templates/traffic.html:27
+msgid "流量的记扣精度到个位数，向上取整。如54.3MB向上取整为55MB，则记扣55。"
+msgstr "流量的记扣精度到个位数，向上取整。如54.3MB向上取整为55MB，则记扣55。"
+
+#: templates/tutorial.html:3 templates/tutorial.html:13
+msgid "使用教程"
+msgstr "使用教程"
+
+#: templates/tutorial.html:16
+msgid "1：在首页输入框中输入当前需要下载的文件的链接，点击搜索。"
+msgstr "1：在首页输入框中输入当前需要下载的文件的链接，点击搜索。"
+
+#: templates/tutorial.html:17
+msgid "2：再在搜索列表中选择合适的文件，点击右侧的下载链接，自动跳转到下载页面。"
+msgstr "2：再在搜索列表中选择合适的文件，点击右侧的下载链接，自动跳转到下载页面。"
+
+#: templates/tutorial.html:18
+msgid "3：最后在浏览器路径选择对话框中选择下载存放路径。"
+msgstr "3：最后在浏览器路径选择对话框中选择下载存放路径。"
+
+#: templates/tutorial.html:19
+msgid "注意："
+msgstr "注意："
+
+#: templates/flask_user/change_password.html:5 templates/flask_user/edit_user_profile.html:26
+msgid "Change password"
+msgstr "修改密码"
+
+#: templates/flask_user/change_username.html:5 templates/flask_user/edit_user_profile.html:23
+msgid "Change username"
+msgstr "修改用户名"
+
+#: templates/flask_user/edit_user_profile.html:5
+msgid "User profile"
+msgstr "用户信息"
+
+#: templates/flask_user/forgot_password.html:5
+msgid "Forgot Password"
+msgstr "忘记密码"
+
+#: templates/flask_user/invite_user.html:5
+msgid "Invite User"
+msgstr "邀请"
+
+#: templates/flask_user/login.html:5 templates/flask_user/login_or_register.html:9
+msgid "Sign in"
+msgstr "登录"
+
+#: templates/flask_user/login.html:21
+msgid "New here? Register."
+msgstr "新用户? 马上注册"
+
+#: templates/flask_user/login.html:44 templates/flask_user/login_or_register.html:34
+msgid "Forgot your Password?"
+msgstr "忘记密码?"
+
+#: templates/flask_user/login_or_register.html:41 templates/flask_user/register.html:5
+msgid "Register"
+msgstr "注册"
+
+#: templates/flask_user/manage_emails.html:5
+msgid "Manage Emails"
+msgstr "邮箱管理"
+
+#: templates/flask_user/register.html:21
+msgid "Already registered? Sign in."
+msgstr "已注册?立即登录"
+
+#: templates/flask_user/resend_confirm_email.html:5
+msgid "Resend Confirmation Email"
+msgstr "重新发送确认邮件"
+
+#: templates/flask_user/reset_password.html:5
+msgid "Reset Password"
+msgstr "重置密码"
+
+#: templates/flask_user/emails/base_message.html:1
+msgid "Dear "
+msgstr "尊敬的 "
+
+#: templates/flask_user/emails/base_message.html:6
+msgid "Sincerely,"
+msgstr "敬上，"
+
+#: templates/flask_user/emails/confirm_email_message.html:4
+#, python-format
+msgid "You will need to confirm your email to start using %(app_name)s."
+msgstr "需要您先确认邮箱地址之后才能使用%(app_name)s。"
+
+#: templates/flask_user/emails/confirm_email_message.html:6
+msgid "If you initiated this confirmation, please click on the link below:"
+msgstr "如果您没有发起此请"
+
+#: templates/flask_user/emails/confirm_email_message.html:7 templates/flask_user/emails/registered_message.html:11
+msgid "Confirm your email"
+msgstr "确认邮箱"
+
+#: templates/flask_user/emails/confirm_email_message.html:9
+msgid "If you did not initiate this confirmation, you may safely ignore this email."
+msgstr "如果此邮件是您本人发起的，请忽略。"
+
+#: templates/flask_user/emails/invite_user_message.html:5
+#, python-format
+msgid "You have been invited to join %(app_name)s!"
+msgstr "您被邀请加入 %(app_name)s!"
+
+#: templates/flask_user/emails/invite_user_message.html:7
+msgid "To register an account, please click on the link below:"
+msgstr "要注册账号，请点击下面的链接："
+
+#: templates/flask_user/emails/invite_user_message.html:8
+#, python-format
+msgid "Join %(app_name)s"
+msgstr "加入 %(app_name)s"
+
+#: templates/flask_user/emails/password_changed_message.html:4
+msgid "Your password has been changed"
+msgstr "密码已修改"
+
+#: templates/flask_user/emails/password_changed_message.html:6
+msgid "If you did not initiate this password change, "
+msgstr "如果您没有发起修改密码请求， "
+
+#: templates/flask_user/emails/password_changed_message.html:6
+msgid "click here to reset it"
+msgstr "点这里重置"
+
+#: templates/flask_user/emails/registered_message.html:5
+#, python-format
+msgid "Thank you for registering with %(app_name)s."
+msgstr "感谢注册 %(app_name)s。"
+
+#: templates/flask_user/emails/registered_message.html:8
+msgid "You will need to confirm your email next."
+msgstr "接下来需要您确认邮箱。"
+
+#: templates/flask_user/emails/registered_message.html:10
+msgid "If you initiated this registration, please click on the link below:"
+msgstr "如果此邮件是您本人发起的，请点击下面的链接："
+
+#: templates/flask_user/emails/registered_message.html:14
+msgid "If you did not initiate this registration, you may safely ignore this email."
+msgstr "如果此邮件不是您本人发起的，请忽略。"
+
+#: templates/flask_user/emails/reset_password_message.html:5
+msgid "We have received your password reset request."
+msgstr "我们已收到您的密码重置请求。"
+
+#: templates/flask_user/emails/reset_password_message.html:7
+msgid "If you initiated this request, please click on the link below:"
+msgstr "如果请求是您本人发起的，请点击下面的链接："
+
+#: templates/flask_user/emails/reset_password_message.html:8
+msgid "Reset password"
+msgstr "重置密码"
+
+#: templates/flask_user/emails/reset_password_message.html:10
+msgid "If you did not initiate this password reset, you may safely ignore this email."
+msgstr "如果此邮件不是由您本人发起的，请忽略。"
+
+#: templates/flask_user/emails/username_changed_message.html:4
+msgid "Your username has been changed."
+msgstr "用户名已修改。"
+
+#: templates/flask_user/emails/username_changed_message.html:5
+msgid "If you did not initiate this username change,"
+msgstr "如果你没有要求修改用户名,"
+
+#: templates/flask_user/emails/username_changed_message.html:5
+msgid "sign in"
+msgstr "登录"
+
+#: templates/flask_user/emails/username_changed_message.html:5
+msgid "(using your email address) and change your password."
+msgstr "（使用注册邮箱）修改密码。"
+
+#: util/__init__.py:69
+msgid "Congratulations, you can do it."
+msgstr "恭喜，你可以下载"
+
+#: util/__init__.py:70
+msgid "You have downloaded, try again after {} minutes"
+msgstr "已经下载过一次了，请 {} 分钟后再试"
+
+#: util/__init__.py:71
+msgid "Leave some for others, try again after {} minutes"
+msgstr "给别人留点吧，请 {} 分钟后再试"
+
+#: util/__init__.py:72
+msgid "Free traffic is running out, try again after {} minutes"
+msgstr "免费流量快用完了，请 {} 分钟后再试"
+
+#: util/__init__.py:73
+msgid "Run out of traffic, try again after {} minutes"
+msgstr "免费流量马上就用完了，请 {} 分钟后再试"
+
+#: util/__init__.py:74
+msgid "Free download traffic is over"
+msgstr "免费流量用完了!"
+
+#: util/utils.py:165
+msgid "Unable to download JSON metadata!"
+msgstr "未能获取到下载信息!"
+
+#: util/utils.py:167
+msgid "request timed out!"
+msgstr "请求超时!"
+
+#: util/utils.py:169
+msgid "Connection refused!"
+msgstr "连接被对方断开!"
+
+#: util/utils.py:171
+msgid "客户端无权播放"
+msgstr "客户端无权播放"
+
+#: util/utils.py:173
+msgid "远程主机强迫关闭了一个现有的连接"
+msgstr "远程主机强迫关闭了一个现有的连接"
+
+#: util/utils.py:175
+msgid "The video does not exist!"
+msgstr "该视频不存在!"
+
+#~ msgid "Thank you for registering with {{ app_name }}."
+#~ msgstr "感谢注册 {{ app_name }}"
+
+#~ msgid ""
+#~ "If you initiated this registration, please click on the link below:<br/>\n"
+#~ "&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"%(confirm_email_link)s\">Confirm your email</a>.</p>\n"
+#~ msgstr ""
+#~ "如果是您本人发起的注册请求，请点击下面的确认链接:<br/>\n"
+#~ "&nbsp;&nbsp;&nbsp;&nbsp;<a href=“%(confirm_email_link)s”>确认邮箱</a>.</p>\n"
+
+#~ msgid "You will need to confirm your email to start using "
+#~ msgstr "需要您先验证邮箱之后才能正常使用 "
+
+#~ msgid ""
+#~ "If you initiated this confirmation, please click on the link below:<br/>\n"
+#~ "&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"%(confirm_email_link)s\">Confirm your email</a>."
+#~ msgstr ""
+#~ "如果是您本人操作的，请点击下面的确认链接:<br/>\n"
+#~ "&nbsp;&nbsp;&nbsp;&nbsp;<a href=“%(confirm_email_link)s”>确认邮箱</a>."
+
+#~ msgid "Sincerely"
+#~ msgstr "敬上"
+
+#~ msgid "You have been invited to join "
+#~ msgstr "邀请您加入 "
+
+#~ msgid ""
+#~ "To register an account, please click on the link below:<br/>\n"
+#~ "&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"%(accept_invitation_link)s\">Join %(app_name)s</a>."
+#~ msgstr ""
+#~ "要注册帐户，请点击下面的链接:<br/>\n"
+#~ "&nbsp;&nbsp;&nbsp;&nbsp;<a href=“%(accept_invitation_link)s”>加入 %(app_name)s</a>."
+
+#~ msgid ""
+#~ "If you initiated this request, please click on the link below:<br/>\n"
+#~ "&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"%(reset_password_link)s\">Reset password</a>.</p>"
+#~ msgstr ""
+#~ "如果此邮件是由您本人发起的，请点击下面的链接:<br/>\n"
+#~ "&nbsp;&nbsp;&nbsp;&nbsp;<a href=“%(reset_password_link)s”>重置密码</a>.</p>"
+
+#~ msgid "Your password has been changed."
+#~ msgstr "密码已修改。"
+
+#~ msgid ""
+#~ "Our website is made possible by displaying online advertisements to our visitors.<br>\n"
+#~ "  Please consider supporting us by disabling your ad blocker."
+#~ msgstr ""
+#~ "本站通过向访问者显示在线广告来获取收入，收入全部用于维持网站的日常运行。<br>\n"
+#~ "请考虑通过停用广告拦截器来支持本站。"
+
+#~ msgid ""
+#~ "Our website is made possible by displaying online advertisements to our visitors.<br/>\n"
+#~ "  Please consider supporting us by disabling your ad blocker."
+#~ msgstr ""
+#~ "本站通过向访问者显示在线广告来获取收入，收入全部用于维持网站的日常运行。<br/>\n"
+#~ "  请考虑通过停用广告拦截器来支持本站。"
+
+#~ msgid ""
+#~ "Our website is made possible by displaying online advertisements to our visitors.\n"
+#~ "  Please consider supporting us by disabling your ad blocker."
+#~ msgstr ""
+#~ "本站通过向访问者显示在线广告来获取收入，收入全部用于维持网站的日常运行。\n"
+#~ "  请考虑通过停用广告拦截器来支持本站。"
+
+#~ msgid "流量的记扣精度到个位数，向上取整。如54.3MB向上取整未55MB，则记扣55。"
+#~ msgstr "流量的记扣精度到个位数，向上取整。如54.3MB向上取整未55MB，则记扣55。"

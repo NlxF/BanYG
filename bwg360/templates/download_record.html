@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block title %}
+<title>{%trans%}BanYG360{%endtrans%}|{%trans%}下载记录{%endtrans%}</title>
+{% endblock %}
+{% block body_sidebar%}
+{% include 'sidebar_member.html' %}
+{% endblock %}
+
+{% block body_content %}
+<div class="container col-container-margin">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="row">
+            <h2 align="center">{%trans%}下载记录{%endtrans%}</h2>
+            <p>{%trans%}仅显示最近的{{limit}}条或最近一个月的记录:{%endtrans%}</p>
+            <div>
+                <table class="table table-hover table-bordered search-result-table">
+                    <tr>
+                        <th class="text-center">{%trans%}NO.{%endtrans%}</th>
+                        <th class="text-center">{%trans%}文件名{%endtrans%}</th>
+                        <th class="text-center">{%trans%}下载IP{%endtrans%}</th>
+                        <th class="text-center">{%trans%}下载URL{%endtrans%}</th>
+                        <th class="text-center">{%trans%}下载时间{%endtrans%}</th>
+                        <th class="text-center" style="width: 100px">{%trans%}是否免流量{%endtrans%}</th>
+                    </tr>
+                    {% for record in records %}
+                    <tr>
+                        <td class="text-center">{{ loop.index }}</td>
+                        <td class="text-center">{{ record.title }}</td>
+                        <td class="text-center">{{ record.ip }}</td>
+                        <td class="text-center">{{ record.url }}</td>
+                        <td class="text-center">{{ record.time }}</td>
+                        <td class="text-center">{{ record.is_free | readable }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "footer.html" %}
+{% endblock %}
+
+{% block sidebar_js %}
+{% include "sidebar_js.html"%}
+{% endblock %}

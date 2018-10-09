@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block title %}
+<title>{%trans%}搬运工360{%endtrans%}|{%trans%}流量问题{%endtrans%}</title>
+{% endblock %}
+{% block body_sidebar%}
+{% include 'sidebar_member.html' %}
+{% endblock %}
+
+{% block body_content %}
+<div class="container">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="row">
+            <h2 align="center">{%trans%}流量问题{%endtrans%}</h2>
+            <br/>
+            <br/>
+            <p>{%trans%}本站每天提供{{amount}}GB的流量供大家免费下载，此流量只针对未充值用户和游客。免费流量在下列情况下会记扣：{%endtrans%}</p>
+            <ul>
+                <li><p>{%trans%}游客下载：一旦开始下载，额度就会被占用，不管最终是否下载成功。{%endtrans%}</p></li>
+                <li><p>{%trans%}未充值用户下载：一旦开始下载，额度就会被占用，不管最终是否下载成功。{%endtrans%}</p></li>
+                <li><p>{%trans%}之所以免费流量在下载刚开始后就记扣是因为若在下载结束后才记扣，就会出现超额现象，增加运营成本，请见谅。{%endtrans%}</p></li>
+            </ul>
+            <p>{%trans%}充值流量：{%endtrans%}</p>
+            <ul>
+                <li><p>{%trans%}充值用户流量只有在成功下载结束后才会记扣。{%endtrans%}</p></li>
+                <li><p>{%trans%}当用户下载文件时，可能会出现正在下载的链接的文件大小已经超过了账户剩余的流量额，本站出于保证用户能够在超流量情况下下载完整，允许出现负数流量，即是超支流量。超支部分流量在下次充值后会自动扣除。{%endtrans%}</p></li>
+            </ul>
+            <p>{%trans%}流量的记扣精度到个位数，向上取整。如54.3MB向上取整为55MB，则记扣55。{%endtrans%}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "footer.html" %}
+{% endblock %}
+
+{% block sidebar_js %}
+{% include "sidebar_js.html"%}
+{% endblock %}

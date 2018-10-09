@@ -1,0 +1,7 @@
+{%trans%}Dear User{%endtrans%}:
+
+{% block message %}
+{% endblock %}
+
+{%trans%}Sincerely,{%endtrans%}
+{{ app_name }}

@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block title %}
+<title>{%trans%}BanYG360{%endtrans%}|{%trans%}下载问题{%endtrans%}</title>
+{% endblock %}
+{% block body_sidebar%}
+{% include 'sidebar_member.html' %}
+{% endblock %}
+
+{% block body_content %}
+<div class="container">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="row">
+            <h2 align="center">{%trans%}下载问题{%endtrans%}</h2>
+            <br/>
+            <br/>
+            <p>{%trans%}1. 游客下载有次数限制，24h内只能下载一个文件。注册成普通用户后此限制会自动取消。{%endtrans%}</p>
+            <p>{%trans%}2. 游客和普通用户每次下载的文件大小不能超过{{maxfile}}MB。{%endtrans%}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "footer.html" %}
+{% endblock %}
+
+{% block sidebar_js %}
+{% include "sidebar_js.html"%}
+{% endblock %}

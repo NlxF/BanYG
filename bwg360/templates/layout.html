@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    {% block title %}
+    {% endblock %}
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.jpg') }}">
+    {#<script src="https://recaptcha.net/recaptcha/api.js"></script>#}
+    <!--<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>-->
+    <!--<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>-->
+    <script src="{{ url_for('static', filename='js/jquery-1.12.4.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.toast.min.js') }}"></script>
+    {#<script src="https://cdn.bootcss.com/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>#}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fingerprintjs2/1.5.1/fingerprint2.min.js"></script>
+    <script src="{{ url_for('static', filename='js/array-from-support.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/kkk.js') }}?q=1280549724"></script>
+    <script src="{{ url_for('static', filename='js/ads.js') }}"></script>
+    <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+    {#{{ moment.include_jquery() }}#}
+    {{ moment.include_moment() }}
+    <!--使用中文,默认是英语的-->
+    {{ moment.lang("zh-CN") }}
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    {#<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.css') }}">#}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/structure.css') }}?q=128054978">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?q=128054919">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/jquery.toast.min.css') }}">
+    {#<link href="https://cdn.bootcss.com/jquery-toast-plugin/1.3.2/jquery.toast.min.css" rel="stylesheet">#}
+    {% block custom_css %}
+    {% endblock %}
+</head>
+<body>
+    {% include "adblock.html" %}
+    {% block message%}
+        {% include "message.html" %}
+    {% endblock %}
+    {% block body %}
+    <div id="wrapper">
+        <div class="overlay"></div>
+        <!-- Sidebar -->
+        {% block body_sidebar %}
+        {% endblock %}
+        <!-- sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <button type="button" class="hamburger is-closed animated fadeInLeft" data-toggle="offcanvas">
+                <span class="hamb-top"></span>
+                <span class="hamb-middle"></span>
+                <span class="hamb-bottom"></span>
+            </button>
+            <div id="content-col">
+                {% block body_content %}
+                {% endblock %}
+            </div>
+        </div>
+        <!-- page-content-wrapper -->
+    </div>
+    <!-- wrapper -->
+    {% endblock %}
+    {% block footer %}
+    {% endblock %}
+    <script type=text/javascript>
+        $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+        {% block sidebar_js %}
+        {% endblock %}
+    </script>
+</body>
+</html>

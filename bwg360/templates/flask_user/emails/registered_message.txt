@@ -1,0 +1,15 @@
+{% extends 'flask_user/emails/base_message.txt' %}
+
+{% block message %}
+{%trans%}Thank you for registering with {{ app_name }}.{%endtrans%}
+
+{% if confirm_email_link -%}
+{%trans%}You will need to confirm your email next.{%endtrans%}
+
+{%trans%}If you initiated this registration, please visit the link below:{%endtrans%}
+    {{ confirm_email_link }}
+
+{%trans%}If you did not initiate this registration, you may safely ignore this email.{%endtrans%}
+
+{%- endif %}
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block title %}
+<title>{%trans%}BanYG360{%endtrans%}|{%trans%}免责声明{%endtrans%}</title>
+{% endblock %}
+{% block body_sidebar%}
+{% include 'sidebar_member.html' %}
+{% endblock %}
+
+{% block body_content %}
+<div class="container">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="row">
+            <h2 align="center">{%trans%}免责声明{%endtrans%}</h2>
+            <br/>
+            <br/>
+            <ul>
+                <li><p>{%trans%}本站搜索资源全部来自于互联网，通过使用本站随之而来的风险与本站无关。访问者可将本站提供的内容用于个人学习、研究或欣赏，以及其他非商业性或非盈利性用途，但同时应遵守著作权法及其他相关法律的规定，不得侵犯本网站及相关权利人的合法权利。{%endtrans%}</p></li>
+                <li><p>{%trans%}本站致力于提供合理、准确、完整的资讯信息，但不保证信息的合理性、准确性和完整性，且不对因信息的不合理、不准确或遗漏导致的任何损失或损害承担责任。{%endtrans%}</p></li>
+                <li><p>{%trans%}使用本站需要遵守当地的放律法规，不得利用本站危害国家安全、泄露国家秘密，不得侵犯国家社会集体的和公民的合法权益。{%endtrans%}</p></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "footer.html" %}
+{% endblock %}
+
+{% block sidebar_js %}
+{% include "sidebar_js.html"%}
+{% endblock %}

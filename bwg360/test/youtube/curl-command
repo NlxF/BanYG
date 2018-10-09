@@ -1,0 +1,2 @@
+
+curl -X GET -s '127.0.0.1:5001/download?url=http://v.youku.com/v_show/id_XMzAyMzk2NzkxNg==.html?spm=a2hww.20023042.m_226600.5~5!2~5~5~5~5~A&f=49716696' -o "file_#1.mp4"

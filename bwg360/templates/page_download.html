@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block title %}
+{% include "title.html" %}
+{% endblock %}
+{% block body %}
+{% if exist %}
+    <SCRIPT>
+        var click = 3;
+        setInterval(function(){
+            click = click-1;
+            if(click>0)
+            {
+                document.getElementById('wait2download').innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;'+click+' 秒后自动载入';
+            }
+            if(click==0){
+                document.getElementById('wait2download').innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;";
+                window.top.location = '/files/download?fid={{form.fid}}&seq={{form.uuid}}';
+            }
+        }, 1000)
+    </SCRIPT>
+    <div class="container col-container-margin download-message">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="row">
+                <span id="wait2download">&nbsp;&nbsp;&nbsp;&nbsp;3 秒后自动载入</span>
+            </div>
+        </div>
+    </div>
+    <hr class="no-margins"/>
+{% else %}
+    <h1 class="download-message">{{msg}}</h1>
+    <hr class="no-margins"/>
+
+{% endif %}
+{% endblock %}
+{% block footer %}
+{% include "footer.html" %}
+{% endblock %}

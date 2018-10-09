@@ -1,0 +1,10 @@
+{% extends 'flask_user/emails/base_message.html' %}
+
+{% block message %}
+
+<p>{%trans%}You have been invited to join {{ app_name }}!{%endtrans%}</p>
+
+<p>{%trans%}To register an account, please click on the link below:{%endtrans%}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ accept_invitation_link }}">{%trans%}Join {{ app_name }}{%endtrans%}</a></p>
+
+{% endblock %}

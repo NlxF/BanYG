@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block title %}
+<title>{%trans%}BanYG360{%endtrans%}|{%trans%}充值记录{%endtrans%}</title>
+{% endblock %}
+{% block body_sidebar%}
+{% include 'sidebar_member.html' %}
+{% endblock %}
+
+{% block body_content %}
+<div class="container col-container-margin">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="row">
+            <h2 align="center">{%trans%}充值记录{%endtrans%}</h2>
+            <br/>
+            <br/>
+            <h4 align="center">{%trans%}即将到来{%endtrans%}</h4>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "footer.html" %}
+{% endblock %}
+
+{% block sidebar_js %}
+{% include "sidebar_js.html"%}
+{% endblock %}

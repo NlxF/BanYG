@@ -1,0 +1,90 @@
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+
+#aother files
+*.DS_Store
+*.layout
+*.cbp
+bin/
+obj/
+*.depend
+*.h~
+*.c~
+*.proto~
+*.*~
+makefile~
+*.bak
+*.mk
+*.pyc
+*.swp
+
+# custom
+*.py~
+migrations/
+*.sh~
+.gitignore~
+*.pyc
+*.html~
+*.md~
+*.css~
+*.js~
+*.txt~
+*.xml~
+__pycache__
+.idea
+.pyre/
+env*/
+*.pot
+*.pot.bak
+package/
+tmp/
+pic/
+src/
+backup/
+doc/
+config/
+cookies.txt
+fabfile.py
+.pyre*
+*.crx
+*.rdb
+*.db
+pyvenv.cfg
+bwg360/bwg360_deploy.py
+#bwg360/bwg360_settings.py
+#bwg360/commands/init_db.py
+#bwg360/test/send_email.py
+#bwg360/test/celery_test.py
+*.log
+遗留问题.txt
+

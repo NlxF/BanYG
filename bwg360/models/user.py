@@ -1,22 +1,23 @@
 # -*- coding: utf-8 -*-
 from sqlalchemy import literal, desc
 from flask_user import UserMixin
-from bwg360.models import db, MyDateTime
+from bwg360 import db
+from bwg360.models import MyDateTime
 
 
 # 登录IP表
 class UserIp(db.Model):
     __tablename__ = 'user_ip'
 
-    id = db.Column(db.Integer, primary_key=True)
-    login_time = db.Column(MyDateTime, default=db.func.now(), onupdate=db.func.now())
+    id = db.Column(db.Integer(), primary_key=True)
+    login_time = db.Column(MyDateTime(), default=db.func.now(), onupdate=db.func.now())
     province = db.Column(db.Unicode(256))
     city = db.Column(db.Unicode(250))
     district = db.Column(db.Unicode(256))
     street = db.Column(db.Unicode(256))
     address = db.Column(db.String(255), default='')
 
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id', ondelete='CASCADE'))
+    user_id = db.Column(db.Integer(), db.ForeignKey('users.id', ondelete='CASCADE'))
 
     def __repr__(self):
         return "<UserIP: {0}>".format(self.address)

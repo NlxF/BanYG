@@ -20,18 +20,23 @@ class JobTask(celery.Task):
     """
 
     def on_success(self, retval, task_id, args, kwargs):
-        celery_logger.info("task success")
         task = TaskResult.query.filter(TaskResult.task_id == task_id).first()
         if task:
             task.status = True
-            db.session.add(task)
-            db.session.commit()
+        else:
+            task = TaskResult(task_id=task_id,
+                              task_name=self.name,
+                              args=json.dumps(args),
+                              kwargs=json.dumps(kwargs),
+                              err_code=-110,
+                              exc_msg='')
+        db.session.add(task)
+        db.session.commit()
 
     def on_failure(self, exc, task_id, args, kwargs, einfo):
-        celery_logger.error("task failed")   # , exc:{0}, args:{1}, kwargs:{2}".format(exc, args, kwargs))
         if isinstance(exc, Exception):
             errno = exc.errno if hasattr(exc, 'errno') else -110
-            message = exc.message if hasattr(exc, 'message') else 'Unknow'
+            message = exc.message if hasattr(exc, 'message') else 'Unknow error'
             task = TaskResult(task_id=task_id,
                               task_name=self.name,
                               args=json.dumps(args),
@@ -51,7 +56,7 @@ def query_ip(self, user_id, ip_address):
     ips = UserIp.query.filter_by(user=user).order_by(UserIp.login_time).all()
     ip = ips[0] if len(ips) == 30 else UserIp()
     ip.user = user
-    ip.address = '58.240.34.195'  # ip_address
+    ip.address = ip_address
     try:
         url = "%s%s" % (current_app.config['URL_QUERY'], ip.address)
         resp = urlopen(url, timeout=5)

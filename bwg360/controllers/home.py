@@ -26,10 +26,11 @@ default_param = {"gettext": _}
 
 @user_logged_in.connect_via(app)
 def _track_login(sender, user, **extra):
-    try:
-        query_ip.delay(user.id, request.remote_addr)
-    except Exception as e:
-        print("query ip exception:", e)
+    # try:
+    #     query_ip.delay(user.id, request.remote_addr)
+    # except Exception as e:
+    #     print("query ip exception:", e)
+    pass
 
 
 @bp.route('', methods=['GET', 'POST'])

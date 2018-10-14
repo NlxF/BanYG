@@ -9,7 +9,7 @@ class WrapperProcess(multiprocessing.Process):
         self._kwargs = None
         self._worker = None
 
-    def setTarget(worker=None, args=(), kwargs={}):
+    def setTarget(self, worker=None, args=(), kwargs={}):
         self._args = args
         self._kwargs = kwargs
         self._worker = worker
@@ -18,7 +18,7 @@ class WrapperProcess(multiprocessing.Process):
         try:
             if self._worker:
                 return self._worker(*self._args, **self._kwargs)
-        except Exception, e:
+        except Exception as e:
             raise
         
 

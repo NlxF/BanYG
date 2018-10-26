@@ -118,19 +118,21 @@ def setup_logger(app):
 
 
 def is_free_download(user):
-    if user is None:
+    if not user:
         return True
 
     return user.is_anonymous or user.brick <= 0
 
 
+_DOWNLOAD_FREE   = 512 * 1024         # 免费用户下载速度 512k
+_DOWNLOAD_USER   = 1 * 1024 * 1024    # 注册用户下载速度 1M
+_DOWNLOAD_MEMBER = 2 * 1024 * 1024    # 会员用户下载速度 2M
+
+
 def get_download_speed(user):
     # Download rate
-    _DOWNLOAD_FREE   = '5K'    # 免费用户下载速度
-    _DOWNLOAD_USER   = '1M'    # 注册用户下载速度
-    _DOWNLOAD_MEMBER = '2M'    # 会员用户下载速度
 
-    if user is None:
+    if not user:
         return _DOWNLOAD_FREE
 
     if is_free_download(user):

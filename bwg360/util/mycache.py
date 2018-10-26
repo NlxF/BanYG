@@ -59,7 +59,7 @@ class MyRedisCache(metaclass=Singleton):
         return b'!' + pickle.dumps(value)
 
     def load_object(self, value):
-        if value is None:
+        if not value:
             return None
         if value.startswith(b'!'):
             try:
@@ -247,7 +247,7 @@ def set_free_download_sequence_flag(username):
 
 def set_free_download_flag(user_info):
     current_user, fp, ip = user_info
-    if current_user is None or current_user.is_anonymous:
+    if not current_user or current_user.is_anonymous:
         set_anonymous_download_flag(fp, ip)
     elif current_user.brick <= 0:
         set_free_download_sequence_flag(current_user.username)

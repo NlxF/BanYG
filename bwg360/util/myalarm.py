@@ -26,7 +26,7 @@ def _set_free_download():
         from bwg360.models.download import FreeDownloadINFO, db
 
         fd = FreeDownloadINFO.query.filter_by(tag=tag).first()
-        if fd is None:
+        if not fd:
             fd = FreeDownloadINFO(start=get_init_free_download_size())
             db.session.add(fd)
             db.session.commit()

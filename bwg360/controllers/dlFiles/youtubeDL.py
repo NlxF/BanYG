@@ -168,7 +168,7 @@ class YoutubeDL(BaseDL):
         ydl_opts.update({
             'format'    : format_id,
             'outtmpl'   : 'tmp/{}/%(id)s.%(ext)s'.format(dir_name),    # 下载临时目录
-            "ratelimit" : limit,
+            # "ratelimit" : limit,
             'progress_hooks': [_progress_hook(queue, dl_status)],
         })
         update_cookies(ydl_opts)

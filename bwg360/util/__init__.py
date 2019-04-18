@@ -75,4 +75,5 @@ over_total_free_download_toast = _("Free download traffic is over")             
 visitor_no_free_download_toast = _('visitor can only download once a day for free')
 
 
-__all__ = ['filters', 'TimeConver', 'string_types', 'search_flag', 'search_prefix', 'free_download_max_once']
+__all__ = ['filters', 'TimeConver', 'string_types', 'search_flag', 'search_prefix', 'free_download_max_once',
+           'Singleton']

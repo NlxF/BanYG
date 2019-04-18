@@ -10,6 +10,7 @@ def add_blueprint(blueprint):
 def register_blueprints(app):
     # creates and registers blueprints
     from bwg360.controllers import home
+    from bwg360.controllers import administer
 
     for blueprint in _blueprints:
         app.register_blueprint(blueprint)

@@ -6,7 +6,6 @@ import re
 import random
 import logging
 import logging.handlers
-# from flask_babelex import gettext as _
 from bwg360.util.translation_utils import gettext as _
 from bwg360.flask_user import MyUserManager
 

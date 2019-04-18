@@ -34,7 +34,7 @@ def _track_login(sender, user, **extra):
 
 @bp.route('', methods=['GET', 'POST'])
 @sub.route('', methods=['GET', 'POST'])
-@download_check
+# @download_check
 def home_page():
     if request.method == 'POST':
         form = SearchForm(request.form)
@@ -44,7 +44,7 @@ def home_page():
             except ValueError:
                 url_uuid = generate_crc_number(32)
 
-            register = False
+            register = not current_user.is_anonymous
             timeout = 0 if register else app.config['CACHE_VISITOR_SEARCH_LIMIT']         # 若是游客，设置搜索结果超时机制
             redis_cache = MyRedisCache.getInstance()
             redis_cache.set(generate_flag(search_flag, url_uuid), form.file_url.data, timeout)

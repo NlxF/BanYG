@@ -31,8 +31,10 @@
     {{ moment.lang("zh-CN") }}
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     {#<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.css') }}">#}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/structure.css') }}?q=128054978">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?q=128054919">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/structure.css') }}">
+    {% block htstyle %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% endblock %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/jquery.toast.min.css') }}">
     {#<link href="https://cdn.bootcss.com/jquery-toast-plugin/1.3.2/jquery.toast.min.css" rel="stylesheet">#}
     {% block custom_css %}

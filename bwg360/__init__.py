@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from gevent import monkey; monkey.patch_socket()
+# from gevent import monkey; monkey.patch_socket()
 from flask import Flask, g, session, abort
 from flask_cache import Cache
 from flask_babelex import Babel
@@ -17,11 +17,8 @@ from bwg360.util.mySqlalchemy import UnlockedReadAlchemy
 from bwg360.util.makeCelery import make_celery
 from celery.utils.log import get_task_logger
 from bwg360.util.utils import setup_logger, setup_login_user, setup_list_support_site
-# from gevent import monkey
-# monkey.patch_all()
-# monkey.patch_socket()
-# ***** Initialize Flask app  *****#
 
+# ***** Initialize Flask app  *****#
 app = Flask("bwg360")
 
 # ***** Initialize app config settings *****#
@@ -111,7 +108,7 @@ def create_app(db_command=False):
     toolbar = DebugToolbarExtension(app)
 
     # celery setting
-    celery.conf.update(app.config)        # 更新 celery 的配置
+    # celery.conf.update(app.config)        # 更新 celery 的配置
 
     # Define bootstrap_is_hidden_field for flask-bootstrap's bootstrap_wtf.html
     from wtforms.fields import HiddenField

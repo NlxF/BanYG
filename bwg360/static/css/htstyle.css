@@ -1,0 +1,131 @@
+body{
+    margin:0;
+    padding:0;
+    font-family: Lato,Helvetica,Arial,sans-serif;
+        font-size: 14px;
+        line-height: 1.72222;
+        color: #34495e;
+        background-color: #fff;
+}
+.overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.wrap {
+    min-width: 100%;
+    position: absolute;
+    background: #eff3f6 bottom;
+    min-height: 100%;
+    overflow: hidden;
+}
+.left{
+    margin-left:0px;
+    position: absolute;
+    box-sizing: border-box;
+    width: 200px;
+    height: 100%;
+    background: #4d5e70 bottom;
+    overflow: scroll;
+}
+.logoDiv{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 70px;
+    background-color: #354457;
+    font-size: 17px;
+    color: #fff;
+    vertical-align: bottom;
+}
+.logoTitle{
+    justify-content: center;
+    line-height: 1.7;
+}
+.menu-title {
+    margin-left:5px;
+    color: #828e9a;
+    padding-top: 5px;
+    padding-bottom: 0px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.menu-item {
+    padding-left:15px;
+    /*line-height: 40px;*/
+    /*height: 40px;*/
+    color: #aab1b7;
+    cursor: pointer;
+}
+.menu-item-active {
+    background-color: #3d4e60;
+    border-right: 4px solid #647f9d;
+    color: #fff;
+}
+.right{
+    box-sizing: border-box;
+    float: left;
+    padding-left: 200px;
+    overflow-y: overlay;
+    overflow-x: hidden;
+    clear: both;
+    color: #717592;
+    min-width: 100%;
+    min-height: 500px;
+}
+
+.auto-scroll{
+    position:absolute;
+    width:100%;
+    height:100%;
+    overflow-y:scroll;
+}
+
+.data-block-head{
+    margin-left:40px;
+    text-shadow: 2px 0px 6px rgba(255, 255, 255, 0.91);
+    font-size: 24px;
+}
+
+.data-block-content{
+    margin:15px 15px 0 15px;
+    border:2px solid;
+    border-radius:25px !important;
+    -moz-border-radius:25px; /* Old Firefox */
+}
+
+.smooth-scroll {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth; // Added in from answer from Felix
+    overflow-y: scroll;
+}
+
+.outer-container {
+  width: 100%;
+  height: 100%;
+}
+
+.outer-container {
+  /*border: 5px solid purple;*/
+  position: relative;
+  overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.inner-container {
+  position: absolute;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.inner-container::-webkit-scrollbar {
+  display: none;
+}

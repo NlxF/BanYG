@@ -152,6 +152,75 @@ class MyRedisCache(metaclass=Singleton):
         return num > 0
 
 
+class CacheSetting(object, metaclass=Singleton):
+    def __init__(self):
+        from bwg360.models.settings import Setting, init_site_settings
+        st = Setting.query.first()
+        if not st:
+            st = init_site_settings()
+        self.free_download_max_once = st.free_download_max_once
+        self.free_download_one_day  = st.free_download_one_day
+        self.free_download_step     = st.free_download_step
+        self.free_download_search_limit   = st.free_download_search_limit
+        self.charge_download_search_limit = st.charge_download_search_limit
+        self.free_download_speed = st.free_download_speed
+        self.user_download_speed = st.user_download_speed
+        self.memb_download_speed = st.memb_download_speed
+
+        self.notices = st.notices.all()
+
+    def reload(self):
+        self.__init__()
+
+    def update(self, *args, **kwargs):
+        if kwargs.get('free_download_max_once', None):
+            self.free_download_max_once = kwargs.get('free_download_max_once')
+        elif kwargs.get('free_download_one_day', None):
+            self.free_download_one_day = kwargs.get('free_download_one_day')
+        elif kwargs.get('free_download_step', None):
+            self.free_download_step = kwargs.get('free_download_step')
+        elif kwargs.get('free_download_search_limit', None):
+            self.free_download_search_limit = kwargs.get('free_download_search_limit')
+        elif kwargs.get('charge_download_search_limit', None):
+            self.charge_download_search_limit = kwargs.get('charge_download_search_limit')
+        elif kwargs.get('free_download_speed', None):
+            self.free_download_speed = kwargs.get('free_download_speed')
+        elif kwargs.get('user_download_speed', None):
+            self.user_download_speed = kwargs.get('user_download_speed')
+        elif kwargs.get('memb_download_speed', None):
+            self.memb_download_speed = kwargs.get('memb_download_speed')
+
+        if args:
+            self.notices.extend(args)
+
+    def save_to_db(self):
+        from bwg360.models.settings import Setting, Notice, db
+        st = Setting.query.first()
+        st.free_download_max_once = self.free_download_max_once
+        st.free_download_one_day  = self.free_download_one_day
+        st.free_download_step     = self.free_download_step
+        st.free_download_search_limit   = self.free_download_search_limit
+        st.charge_download_search_limit = self.charge_download_search_limit
+
+        st.free_download_speed = self.free_download_speed
+        st.user_download_speed = self.user_download_speed
+        st.memb_download_speed = self.memb_download_speed
+
+        exist_notices = st.notices.all()
+        for notice in self.notices:
+            if notice not in exist_notices:
+                nt = Notice(content=notice)
+                st.notices.append(nt)
+
+        db.session.add(st)
+        db.session.commit()
+
+    @staticmethod
+    def getInstance():
+        """static access method"""
+        return CacheSetting()
+
+
 def get_init_free_download_size():
     """返回初始的免费下载量, MB为单位"""
     return free_download_one_day

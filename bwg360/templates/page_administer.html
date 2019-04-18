@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block title %}
+{% include "title.html" %}
+{% endblock %}
+{% block htstyle %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/htstyle.css') }}">
+{% endblock %}
+{% block body %}
+{% include 'sidebar_administer.html' %}
+{% endblock %}
+
+{% block footer %}
+{% include "footer.html" %}
+{% endblock %}
+
+{# {% block sidebar_js %}
+{% include "sidebar_js_ht.html"%}
+{% endblock %} #}

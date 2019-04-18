@@ -44,9 +44,6 @@ class User(db.Model, UserMixin):
     brick = db.Column('brick', db.Integer, nullable=False, default=literal(1024))
     vip_expire_at = db.Column(MyDateTime, nullable=True)     # TODO  add vip
 
-    # For test
-    # test_field = db.Column(db.String(100), nullable=True, unique=False)
-
     # user login information
     ips = db.relationship('UserIp', order_by=desc(UserIp.login_time), backref="user", lazy='dynamic')
 
@@ -58,8 +55,8 @@ class User(db.Model, UserMixin):
 
     @property
     def last_login(self):
-        ips = self.ips.all()
-        return ips[0].login_time if ips else u'未知'
+        ip = self.ips.all().first()
+        return ip.login_time if ip else u'未知'
 
     def __repr__(self):
         return "It's <{}>".format(self.username if self.is_authenticated else "anonymous")
@@ -71,6 +68,13 @@ class Role(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     name = db.Column(db.String(50), nullable=False, server_default=u'', unique=True)  # for @roles_accepted()
     label = db.Column(db.Unicode(255), server_default=u'')  # for display purposes
+
+    @property
+    def is_administrator(self):
+        return self.name == 'admin'
+
+    def __repr__(self):
+        return "Role's <{}>".format(self.label)
 
 
 # Define the UserRoles association model

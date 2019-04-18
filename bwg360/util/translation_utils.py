@@ -1,5 +1,4 @@
 import os
-# from flask import request
 from flask import render_template
 
 _translations_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'translations')

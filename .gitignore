@@ -80,8 +80,8 @@ fabfile.py
 *.rdb
 *.db
 pyvenv.cfg
-bwg360/bwg360_deploy.py
-#bwg360/bwg360_settings.py
+bwg360_deploy.py
+bwg360_settings.py
 #bwg360/commands/init_db.py
 #bwg360/test/send_email.py
 #bwg360/test/celery_test.py

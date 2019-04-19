@@ -13,7 +13,7 @@ Flask-debugtoolbar
 #uwsgi
 redis
 hiredis
-fabric3
+#fabric3
 Pillow
 gevent
 selenium

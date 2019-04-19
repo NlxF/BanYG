@@ -1,0 +1,38 @@
+version: '3.2'
+
+services:
+    www-database:
+        image: banyg360/www-database
+        networks:
+            www-network:
+                ipv4_address: 172.16.238.10
+        ports:
+            - 3309:3306
+        environment:
+            - MYSQL_ROOT_PASSWORD=password2BanYG
+        volumes:
+            - ./volume/var/lib/mysql:/var/lib/mysql
+            - ./volume/backup:/www/BanYG/backup
+    www-server:
+        image: banyg360/www-server
+        networks:
+            www-network:
+                ipv4_address: 172.16.238.12
+        environment:
+            - MYSQL_ROOT_PASSWORD=password2BanYG
+        volumes:
+            - ./volume/restore:/www/BanYG/restore
+            - /var/www:/var/www
+        ports:
+            - 80:8080
+        depends_on:
+            - www-database
+        command: ["wait-for-it.sh", "-t", "90", "www-database:3306", "--", "docker-entrypoint.sh", "supervisord"]
+
+networks:
+    www-network:
+        driver: bridge
+        ipam:
+            driver: default
+            config:
+                - subnet: 172.16.238.0/24

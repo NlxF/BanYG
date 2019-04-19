@@ -1,0 +1,34 @@
+version: '3.2'
+
+services:
+
+    www-database:
+        image: banyg360/www-database
+        build:
+            context: .
+            dockerfile: ./deployment/docker/database/Dockerfile
+            args:
+                http_proxy: http:docker.for.mac.localhost:1087
+                https_proxy: http:docker.for.mac.localhost:1087
+                # noproxy: "localhost,127.0.0.1,$LOCAL_DOMAIN"
+        networks:
+            - www-network
+
+    www-server:
+        stdin_open: true
+        tty: true
+        image: banyg360/www-server
+        build:
+            context: .
+            dockerfile: ./deployment/docker/www/Dockerfile
+            args:
+                http_proxy: http:docker.for.mac.localhost:1087
+                https_proxy: http:docker.for.mac.localhost:1087
+                # noproxy: "localhost,127.0.0.1,$LOCAL_DOMAIN"
+        networks:
+            - www-network
+        depends_on:
+            - www-database
+
+networks:
+    www-network:

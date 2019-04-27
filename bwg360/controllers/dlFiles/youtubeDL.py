@@ -119,7 +119,7 @@ class YoutubeDL(BaseDL):
             'socket_timeout': 3,
         }
         try:
-            update_cookies(ydl_opts_inner)
+            # update_cookies(ydl_opts_inner)
             with MyYoutubeDL(ydl_opts_inner) as ydl:
                 info_dict = ydl.extract_info(self.video_url, download=False, ie_key=None)
                 return self._parse_video_format(info_dict)
@@ -171,7 +171,7 @@ class YoutubeDL(BaseDL):
             "ratelimit" : limit,
             'progress_hooks': [_progress_hook(queue, dl_status)],
         })
-        update_cookies(ydl_opts)
+        # update_cookies(ydl_opts)
         you_dl = MyYoutubeDL(ydl_opts)
         try:
             print('start downloading......')

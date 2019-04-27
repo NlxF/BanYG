@@ -24,6 +24,7 @@ SQLAlchemy
 pytesseract
 #MySQL-python, (not support py3)
 mysqlclient
+mysql-connector-python
 pyvirtualdisplay
 selenium-requests
 celery[gevent,redis]

@@ -9,11 +9,9 @@ from bwg360.util.decorators import permission_check
 
 
 bp  = Blueprint('admin', __name__, template_folder='templates', static_folder='static', url_prefix='/m')
-sub = Blueprint('subadmin', __name__, template_folder='templates', static_folder='static', url_prefix='/m', subdomain='www')
 
 
 @bp.route('', methods=['GET', 'POST'])
-@sub.route('', methods=['GET', 'POST'])
 @permission_check
 def administer_page():
     if request.method == 'POST':
@@ -26,4 +24,4 @@ def administer_page():
 
 # Register blueprint
 add_blueprint(bp)
-add_blueprint(sub)
+

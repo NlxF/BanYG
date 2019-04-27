@@ -18,8 +18,7 @@ from bwg360.util.utils import (error_message_filter, generate_crc_number, is_fre
 from bwg360.util.mycache import MyRedisCache, get_file_size_of_format_id
 from bwg360.tasks.jobs import query_ip
 
-bp  = Blueprint('bwg360', __name__, template_folder='templates', static_folder='static', url_prefix='/')
-sub = Blueprint('subdomain', __name__, template_folder='templates', static_folder='static', url_prefix='/', subdomain='www')
+bp = Blueprint('bwg360', __name__, template_folder='templates', static_folder='static', url_prefix='/')
 
 default_param = {"gettext": _}
 
@@ -33,7 +32,6 @@ def _track_login(sender, user, **extra):
 
 
 @bp.route('', methods=['GET', 'POST'])
-@sub.route('', methods=['GET', 'POST'])
 # @download_check
 def home_page():
     if request.method == 'POST':
@@ -77,7 +75,6 @@ def _fetch_information(file_url):
 
 
 @bp.route('files/search/<string:uuid_key>', methods=['GET', ])
-@sub.route('files/search/<string:uuid_key>', methods=['GET', ])
 @download_check
 def search_page(uuid_key):
     form = SearchForm()
@@ -123,7 +120,6 @@ def search_page(uuid_key):
 
 
 @bp.route('files/<string:fid>/<string:uuid_key>', methods=['GET', ])
-@sub.route('files/<string:fid>/<string:uuid_key>', methods=['GET', ])
 @download_check
 def show_download_page(fid, uuid_key):
     redis_cache = MyRedisCache.getInstance()
@@ -136,7 +132,6 @@ def show_download_page(fid, uuid_key):
 
 
 @bp.route('files/download', methods=['GET', ])
-@sub.route('files/download', methods=['GET', ])
 @download_check
 def file_download():
     redis_cache = MyRedisCache.getInstance()
@@ -179,14 +174,12 @@ def file_download():
 
 
 @bp.route('recharge/records', methods=['GET', ])
-@sub.route('recharge/records', methods=['GET', ])
 @login_required
 def recharge_record():
     return custom_render_template("recharge_record.html")
 
 
 @bp.route('download/records', methods=['GET', ])
-@sub.route('download/records', methods=['GET', ])
 @login_required
 def download_record():
     show_limit = 25
@@ -206,14 +199,12 @@ def download_record():
 
 
 @bp.route('disclaimer', methods=['GET', ])
-@sub.route('disclaimer', methods=['GET', ])
 @login_required
 def disclaimer():
     return custom_render_template("disclaimer.html")
 
 
 @bp.route('support-lists', methods=['GET', ])
-@sub.route('support-lists', methods=['GET', ])
 @login_required
 def support_list():
 
@@ -221,35 +212,30 @@ def support_list():
 
 
 @bp.route('do/recharge', methods=['GET', 'POST'])
-@sub.route('do/recharge', methods=['GET', 'POST'])
 @login_required
 def do_recharge():
     return custom_render_template("do_recharge.html")
 
 
 @bp.route('problem/tutorial', methods=['GET', ])
-@sub.route('problem/tutorial', methods=['GET', ])
 @login_required
 def tutorial():
     return custom_render_template("tutorial.html")
 
 
 @bp.route('problem/traffic', methods=['GET', ])
-@sub.route('problem/traffic', methods=['GET', ])
 @login_required
 def traffic():
     return custom_render_template("traffic.html")
 
 
 @bp.route('problem/download', methods=['GET', ])
-@sub.route('problem/download', methods=['GET', ])
 @login_required
 def download():
     return custom_render_template("download_problem.html")
 
 
 @bp.route('problem/file-cache', methods=['GET', ])
-@sub.route('problem/file-cache', methods=['GET', ])
 @login_required
 def file_cache():
     return custom_render_template("file_cache.html")
@@ -257,4 +243,3 @@ def file_cache():
 
 # Register blueprint
 add_blueprint(bp)
-add_blueprint(sub)

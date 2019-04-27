@@ -1,3 +1,4 @@
+#!/Users/ism/projects/bwg360/envmacos/bin/python
 from flask_script import Manager
 from bwg360 import create_app
 from bwg360.commands import InitDbCommand, MyMigrateCommand

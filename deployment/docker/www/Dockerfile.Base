@@ -1,12 +1,13 @@
 # Use the standard Nginx image from Docker Hub
 FROM nginx
 
-# install python, uwsgi, supervisord, redis-server
-RUN apt-get update && apt-get install -y supervisor uwsgi python python-pip procps redis-server default-libmysqlclient-dev mysql-client cron wget logrotate
+# install python3, uwsgi, supervisord, redis-server
+RUN apt-get update && apt-get install -y supervisor uwsgi python3 python3-pip procps redis-server default-libmysqlclient-dev mysql-client cron wget logrotate
 
-RUN /usr/bin/pip install uwsgi "flask==1.0.2" Flask-Bootstrap Flask-SQLAlchemy Flask-Script Flask-mail Flask-WTF Flask-Login 
-RUN /usr/bin/pip install Flask-cache Flask-debugtoolbar "Flask-user<0.7" Flask-babel Flask-migrate
-RUN /usr/bin/pip install passlib Pillow cffi MySQL-python SQLAlchemy redis gevent celery[gevent,redis]
+RUN /usr/bin/pip3 install uwsgi "flask==1.0.2" 
+RUN /usr/bin/pip3 install Flask-WTF Flask-Login Flask-User Flask-cache Flask-script Flask-moment Flask-BabelEx Flask-migrate Flask-bootstrap Flask-sqlalchemy Flask-debugtoolbar
+RUN /usr/bin/pip3 install selenium validators youtube_dl pytesseract mysqlclient mysql-connector-python pyvirtualdisplay
+RUN /usr/bin/pip3 install passlib Pillow cffi SQLAlchemy redis hiredis gevent celery[gevent,redis] selenium-requests
 
 # setup NGINX config
 RUN mkdir -p /spool/nginx /run/pid && \

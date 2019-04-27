@@ -3,14 +3,17 @@ FROM banyg360/wwwserver:base
 ENV HOME=/www/BanYG
 
 # install python, and supervisord, redis-server
-RUN apt-get update && apt-get install -y supervisor uwsgi python python-pip procps redis-server wget logrotate && \
-    /usr/bin/pip install uwsgi flask==1.0.2
+RUN apt-get update && apt-get install -y python3 supervisor uwsgi python3-pip procps redis-server wget logrotate && \
+    /usr/bin/pip3 install uwsgi flask==1.0.2 Flask-User
 
 # Source code file
 COPY ./manager.py ${HOME}/
 COPY ./runserver.py ${HOME}/
 COPY ./celery_worker.py ${HOME}/
+COPY ./cookies.txt ${HOME}/
 COPY ./bwg360 ${HOME}/bwg360
+COPY ./deployment/plugins ${HOME}/plugins
+# COPY ./deployment/config/translations ${HOME}/
 # COPY ./deployment/data/ ${HOME}/sql/
 
 COPY ./deployment/config/wait-for-it.sh /usr/local/bin/
@@ -18,7 +21,7 @@ RUN chmod +x /usr/local/bin/wait-for-it.sh
 
 COPY ./requirements.txt ${HOME}/
 RUN cd ${HOME} && \
-   /usr/bin/pip install -r requirements.txt
+   /usr/bin/pip3 install -r requirements.txt
 
 # Copy the nginx configuration file from the current directory and paste 
 COPY ./deployment/config/nginx.conf /etc/nginx/nginx.conf
